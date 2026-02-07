@@ -1,0 +1,14 @@
+input_path:
+  - /home/arumson/scratch/dmc_electrides/c9/dev_python-fortran/b86bpbe-xdmz/sr2n_mono_b86bpbe-xdmz.scf.out
+file_type: qe
+
+functional: b86bpbe
+damping: z
+output_unit: Ry
+threads: 1
+
+run_settings:
+  verbose_conv: true
+  pairwise: true
+  triples: true
+  extrapolate_triples: false
