@@ -1,13 +1,13 @@
 import numpy as np
 import time
 import sys
+import os
+os.environ["OMP_NUM_THREADS"] = "16"
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../Kernels')))
+import cpair_kernel
 
 
-def epair(tau, mtrx, c6, c8, c10, rc, zinv, damp_type_int,rmax2,a1,a2,zdamp,l,E_CONVERT,verbose,threads):
-    import os
-    os.environ["OMP_NUM_THREADS"] = f"{threads}"
-    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../Kernels')))
-    import cpair_kernel
+def epair(tau, mtrx, c6, c8, c10, rc, zinv, damp_type_int,rmax2,a1,a2,zdamp,l,E_CONVERT,verbose):
     # Convergence tools:
     n_vecs = np.array([0,0,0], dtype=int)
     not_converged = True

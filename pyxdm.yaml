@@ -5,7 +5,6 @@ file_type: qe
 functional: b86bpbe
 damping: z
 output_unit: Ry
-threads: 1
 
 run_settings:
   verbose_conv: true

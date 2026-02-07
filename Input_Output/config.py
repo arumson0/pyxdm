@@ -8,7 +8,6 @@ class Config:
         self.functional: str = yaml_dict["functional"]
         self.damping: str = yaml_dict["damping"]
         self.output_unit: str = yaml_dict["output_unit"]
-        self.threads: int = yaml_dict["threads"]
 
         # Run settings
         run_settings = yaml_dict.get("run_settings", {})

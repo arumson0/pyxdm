@@ -1,13 +1,12 @@
 import numpy as np
 import time
 import sys
+import os
+os.environ["OMP_NUM_THREADS"] = "16"
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../Kernels')))
+import c9_kernel
 
-def etriple(tau, mtrx,c6,rc,c9,zinv,a1,a2,zdamp,damp_type_int,rmax2,l,E_CONVERT,act_conv,verbose,threads):
-    import os
-    os.environ["OMP_NUM_THREADS"] = f"{threads}"
-    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../Kernels')))
-    import c9_kernel
-
+def etriple(tau, mtrx,c6,rc,c9,zinv,a1,a2,zdamp,damp_type_int,rmax2,l,E_CONVERT,act_conv,verbose):
     e9_total = 0
     energies = []
     delta = []

@@ -88,7 +88,7 @@ def run_driver(yaml_path):
                 tau, mtrx, c6, c8, c10, rc, zinv,
                 damp_type_int, rmax2,
                 a1, a2, zdamp,
-                l, E_CONVERT, config.verbose_conv,str(config.threads)
+                l, E_CONVERT, config.verbose_conv
             )
         print(f"Pairwise XDM({config.damping.upper()}) energy ({config.output_unit}): {E_CONVERT*e_xdm_pairwise:12.7f}" )
 
@@ -102,7 +102,7 @@ def run_driver(yaml_path):
                 for j in range(i+1):
                     for k in range(j+1):
                         print(f" {i+1:3} {j+1:3} {k+1:3}  {c9[i,j,k]:.5e}")
-            e_xdm_c9 = etriple(tau, mtrx,c6,rc,c9,zinv,a1,a2,zdamp,damp_type_int,rmax2,l,E_CONVERT,(not config.extrapolate_triples),config.verbose_conv,str(config.threads))
+            e_xdm_c9 = etriple(tau, mtrx,c6,rc,c9,zinv,a1,a2,zdamp,damp_type_int,rmax2,l,E_CONVERT,(not config.extrapolate_triples),config.verbose_conv)
             print(f"Triple-wise XDM({config.damping.upper()}) energy ({config.output_unit}): {E_CONVERT*e_xdm_c9:12.7f}" )
 
         e_xdm_total = e_xdm_pairwise + e_xdm_c9
