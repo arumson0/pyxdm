@@ -17,6 +17,7 @@ def apply_defaults(cfg):
     rs.setdefault("verbose_conv", True)
     rs.setdefault("extrapolate_triples", True)
     rs.setdefault("output_unit", "Ry")
+    rs.setdefault("r2tol", 0.99)
     return cfg
 
 def normalize(cfg):

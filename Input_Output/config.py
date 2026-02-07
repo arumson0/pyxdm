@@ -15,6 +15,7 @@ class Config:
         self.pairwise: bool = run_settings.get("pairwise", True)
         self.triples: bool = run_settings.get("triples", True)
         self.extrapolate_triples: bool = run_settings.get("extrapolate_triples", True)
+        self.r2tol: float = run_settings.get("r2tol")
 
     def __repr__(self):
         return (

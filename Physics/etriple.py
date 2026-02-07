@@ -6,7 +6,7 @@ os.environ["OMP_NUM_THREADS"] = "16"
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../Kernels')))
 import c9_kernel
 
-def etriple(tau, mtrx,c6,rc,c9,zinv,a1,a2,zdamp,damp_type_int,rmax2,l,E_CONVERT,act_conv,verbose):
+def etriple(tau, mtrx,c6,rc,c9,zinv,a1,a2,zdamp,damp_type_int,rmax2,l,E_CONVERT,act_conv,verbose,r2tol):
     e9_total = 0
     energies = []
     delta = []
@@ -15,6 +15,9 @@ def etriple(tau, mtrx,c6,rc,c9,zinv,a1,a2,zdamp,damp_type_int,rmax2,l,E_CONVERT,
     
     if verbose:
        print("Starting the triple-wise XDM computation...")
+       if not act_conv:
+           print(f"Extrapolation requested with R^2 = {r2tol}")
+
     start_time = time.time()
     # F90: c9_loops(tau,mtrx,c6,rc,c9,zinv,a1,a2,zdamp,damp,rmax2,n,l,e9_shell)
     for n in range(0, max_shell+1):
@@ -53,7 +56,7 @@ def etriple(tau, mtrx,c6,rc,c9,zinv,a1,a2,zdamp,damp_type_int,rmax2,l,E_CONVERT,
                     R2 = 1 - SS_res / SS_tot
                     if verbose:
                         print(f"Shell {n}:     E_total = {energies[-1]:5.9f}     ΔE = {delta[-1]:5.9f}     R^2 = {R2:5.3f}")
-                    if R2 > 0.99:
+                    if R2 > r2tol:
                         if verbose:
                             print("LOG-LINEAR CONVERGENCE ACHIEVED! Extrapolating...")
                         r = np.exp(B[1])
