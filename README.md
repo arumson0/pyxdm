@@ -23,13 +23,13 @@ run_settings:
 
 ```
 Tags:
-input_path: path to the electronic structure method output containing the XDM data. Can be a list of multiple files.
-file_type: specify whether the method is reading a `qe` or `aims` file.
-functional: determines the damping parameters for XDM. Currently supports B86bPBE, PBE, and revPBE.
-damping: type of damping function. Options are 'bj' or 'z'
-output_unit: What unit you'd like the XDM energy to be expressed in. Options are Ha, Ry, eV, kcal/mol, kj/mol.
-run_settings:
-    verbose_conv: prints the energy convergence over supercells if true.
-    pairwise: compute the pairwise dispersion contribution (C6, C8, C10)
-    triples: compute the ATM dispersion contribution
-    extrapolate_triples: Very large performance improvement to be gained with this. If true, when the changes in energy become log-linear with R^2 = 0.99, extrapolate the converged energy. Initial testing suggests that this is a very robust method (errors <0.01%).
+`input_path`: path to the electronic structure method output containing the XDM data. Can be a list of multiple files.\n
+`file_type`: specify whether the method is reading a `qe` or `aims` file.\n
+`functional`: determines the damping parameters for XDM. Currently supports B86bPBE, PBE, and revPBE.\n
+`damping`: type of damping function. Options are 'bj' or 'z'\n
+`output_unit`: What unit you'd like the XDM energy to be expressed in. Options are Ha, Ry, eV, kcal/mol, kj/mol.\n
+`run_settings`:\n
+    `verbose_conv`: prints the energy convergence over supercells if true.\n
+    `pairwise`: compute the pairwise dispersion contribution (C6, C8, C10)\n
+    `triples`: compute the ATM dispersion contribution\n
+    `extrapolate_triples`: Very large performance improvement to be gained with this. If true, when the changes in energy become log-linear with R^2 = 0.99, extrapolate the converged energy. Initial testing suggests that this is a very robust method (errors <0.01%).\n
