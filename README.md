@@ -5,7 +5,10 @@ Currently, the implementation is struggling with FHIaims outputs. Not a high pri
 
 # USAGE:
 The compiler adds the pyxdm executable to your path. You may want to copy this to your .bashrc (Sorry windows users, you're on your own.)
-To run, you will need a .yaml file following this template:
+
+`pyxdm input.yaml`
+
+The .yaml file follows this template:
 ```
 input_path:
   - ./examples/ca2n_bulk_b86bpbe-xdmbj.scf.out
