@@ -35,10 +35,10 @@ Tags:
 
 `run_settings`:
 
-    `verbose_conv`: prints the energy convergence over supercells if true.
+`verbose_conv`: prints the energy convergence over supercells if true.
 
-    `pairwise`: compute the pairwise dispersion contribution (C6, C8, C10)
+`pairwise`: compute the pairwise dispersion contribution (C6, C8, C10)
 
-    `triples`: compute the ATM dispersion contribution
+`triples`: compute the ATM dispersion contribution
 
-    `extrapolate_triples`: Very large performance improvement to be gained with this. If true, when the changes in energy become log-linear with R^2 = 0.99, extrapolate the converged energy. Initial testing suggests that this is a very robust method (errors <0.01%).
+`extrapolate_triples`: Very large performance improvement to be gained with this. If true, when the changes in energy become log-linear with R^2 = 0.99, extrapolate the converged energy. Initial testing suggests that this is a very robust method (errors <0.01%).
