@@ -1,5 +1,5 @@
 input_path:
-  - /home/arumson/scratch/dmc_electrides/c9/dev_python-fortran/b86bpbe-xdmz/sr2n_mono_b86bpbe-xdmz.scf.out
+  - ./examples/ca2n_bulk_b86bpbe-xdmbj.scf.out
 file_type: qe
 
 functional: b86bpbe
