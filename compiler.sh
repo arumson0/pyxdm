@@ -12,4 +12,4 @@ mkdir $dir/bin
 chmod +x $dir/driver.py
 ln -s $dir/driver.py $dir/bin/pyxdm
 
-# Remember to add the bin to the path :)
+export PATH=$dir/pyxdm/bin/:$PATH
