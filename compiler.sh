@@ -8,7 +8,8 @@ cd ..
 
 # Add the driver to the PATH
 dir=$(pwd)
+mkdir $dir/bin
 chmod +x $dir/driver.py
-ln -s $dir/driver.py ./bin/pyxdm
+ln -s $dir/driver.py $dir/bin/pyxdm
 
 # Remember to add the bin to the path :)
