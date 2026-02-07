@@ -11,3 +11,4 @@ run_settings:
   pairwise: true
   triples: true
   extrapolate_triples: false
+  r2tol: 0.99
