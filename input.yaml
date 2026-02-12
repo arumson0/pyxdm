@@ -1,5 +1,5 @@
 input_path:
-  - ./examples/ca2n_bulk_b86bpbe-xdmbj.scf.out
+  - ./examples/sr2n_mono_b86bpbe-xdmbj.scf.out
 file_type: qe
 
 functional: b86bpbe
@@ -10,4 +10,5 @@ run_settings:
   verbose_conv: true
   pairwise: true
   triples: true
-  extrapolate_triples: false
+  extrapolate_triples: true
+  r2tol: 0.995
