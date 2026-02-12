@@ -23,7 +23,7 @@ run_settings:
   pairwise: true
   triples: true
   extrapolate_triples: true
-
+  r2tol: 0.99
 ```
 Tags:
 `input_path`: path to the electronic structure method output containing the XDM data. Can be a list of multiple files.
@@ -44,4 +44,6 @@ Tags:
 
 `triples`: compute the ATM dispersion contribution
 
-`extrapolate_triples`: Very large performance improvement to be gained with this. If true, when the changes in energy become log-linear with R^2 = 0.99, extrapolate the converged energy. Initial testing suggests that this is a very robust method (errors <0.01%).
+`extrapolate_triples`: Very large performance improvement to be gained with this. If true, when the changes in energy become log-linear with R^2 = r2tol, extrapolate the converged energy. Initial testing suggests that errors <0.01%.
+
+`r2tol`: defines the tolerance for the log-linear regression. Default is 0.99.
