@@ -75,13 +75,18 @@ do nl1 = -n, n
                   rjk3 = rjk2 * rjk
 
                   if (damp == 0) then
-                    f = (rij3 / (rij3 + (a1*rc(i,j)+a2)**3)) &
-                        * (rik3 / (rik3 + (a1*rc(i,k)+a2)**3)) &
-                        * (rjk3 / (rjk3 + (a1*rc(j,k)+a2)**3))
+                    f = (rij3 / (rij3 + (a1*rc(i,j)+a2)**3.d0)) &
+                        * (rik3 / (rik3 + (a1*rc(i,k)+a2)**3.d0)) &
+                        * (rjk3 / (rjk3 + (a1*rc(j,k)+a2)**3.d0))
                   else if (damp == 1) then
                     fij = (rij3) / (rij3 + (zdamp*c6(i,j)*zinv(i,j))**(1.d0/2.d0))
                     fik = (rik3) / (rik3 + (zdamp*c6(i,k)*zinv(i,k))**(1.d0/2.d0))
                     fjk = (rjk3) / (rjk3 + (zdamp*c6(j,k)*zinv(j,k))**(1.d0/2.d0))
+                    f = fij*fik*fjk
+                  else if (damp == 2) then
+                    fij = (rij3*rij3 / (rij3*rij3 + (a1*rc(i,j) + a2)**6.d0 ))**(1.d0/2.d0)
+                    fik = (rik3*rik3 / (rik3*rik3 + (a1*rc(i,j) + a2)**6.d0 ))**(1.d0/2.d0)
+                    fjk = (rjk3*rjk3 / (rjk3*rjk3 + (a1*rc(i,j) + a2)**6.d0 ))**(1.d0/2.d0)
                     f = fij*fik*fjk
                   endif
 

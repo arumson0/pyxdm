@@ -34,11 +34,18 @@ def run_driver(yaml_path):
         # Set the integer representation of the selected damping function.
         if config.damping=='bj':
             damp_type_int = 0
+            print(f" BJ damping selected. Product of three f_3(Rij) for triples.")
             print(f"    a1        = {a1}")
             print(f"    a2 (Bohr) = {a2}")
         elif config.damping=='z':
             damp_type_int = 1
+            print(f" Z damping selected. Product of three sqrt(f_6 (Rij)) for triples.")
             print(f"    z_damp    = {zdamp}")
+        elif config.damping=='bjsqrt':
+            print(f" BJ damping selected. Product of three sqrt(f_6 (Rij)) for triples.")
+            damp_type_int = 2
+            print(f"    a1        = {a1}")
+            print(f"    a2 (Bohr) = {a2}")
         
         # Set E_CONVERT for units:
         unit = config.output_unit.lower()

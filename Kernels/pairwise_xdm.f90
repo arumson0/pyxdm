@@ -33,11 +33,11 @@ subroutine pairwise_xdm(tau, mtrx, rc, c6, c8, c10, zinv, a1, a2, zdamp, damp, r
                 if (rij2 > rmax2) cycle
                 rij = sqrt(rij2)
 
-                if (damp == 0) then
+                if (damp == 0 .or. damp == 2) then
                   f6  = 1.d0 / (rij**6 + (a1*rc(i,j) + a2)**6)
                   f8  = 1.d0 / (rij**8 + (a1*rc(i,j) + a2)**8)
                   f10 = 1.d0 / (rij**10 + (a1*rc(i,j) + a2)**10)
-                else
+                else if (damp == 1) then
                   f6  = 1.d0 / (rij**6  +  c6(i,j)*zdamp*zinv(i,j))
                   f8  = 1.d0 / (rij**8  +  c8(i,j)*zdamp*zinv(i,j))
                   f10 = 1.d0 / (rij**10 + c10(i,j)*zdamp*zinv(i,j))
