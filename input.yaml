@@ -3,12 +3,12 @@ input_path:
 file_type: qe
 
 functional: b86bpbe
-damping: z
+damping: bj
 output_unit: Ry
 
 run_settings:
   verbose_conv: true
   pairwise: true
   triples: true
-  extrapolate_triples: true
+  extrapolate_triples: false
   r2tol: 0.995

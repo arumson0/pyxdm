@@ -44,6 +44,20 @@ Tags:
 
 `triples`: compute the ATM dispersion contribution
 
-`extrapolate_triples`: Very large performance improvement to be gained with this. If true, when the changes in energy become log-linear with R^2 = r2tol, extrapolate the converged energy. Initial testing suggests that errors <0.01%.
+`extrapolate_triples`: If true, when the changes in energy become log-linear with R^2 = r2tol, extrapolate the converged energy.
 
-`r2tol`: defines the tolerance for the log-linear regression. Default is 0.99.
+`r2tol`: defines the tolerance for the log-linear regression.
+
+# Notes on the log-linear regression method
+The total energy for the ATM term can be extrapolated using a log-linear regression. Doing so can dramatically decrease the computational time required to compute the ATM contribution. Seven points with R^2 >= r2tol are required. This feature is experimental, but a small benchmark on nine simple crystalline system (mix of atomic, molecular, and metallic) suggests the following performance trend.
+```
+ATM DISPSERION ENERGY
+R^2    MAE       ME
+0.900: 0.003667% -0.003664%
+0.950: 0.003667% -0.003664%
+0.975: 0.003351% -0.003349%
+0.990: 0.002897% -0.002881%
+0.995: 0.000323%  0.000043%
+0.999: 0.000323%  0.000043%
+N = 9```
+The very small errors suggest that the method is generally robust. Based on this benchmark, r2tol is reccomended to be between 0.99 and 0.995.
