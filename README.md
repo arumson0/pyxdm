@@ -59,5 +59,6 @@ R^2    MAE       ME
 0.990: 0.002897% -0.002881%
 0.995: 0.000323%  0.000043%
 0.999: 0.000323%  0.000043%
-N = 9```
+N = 9
+```
 The very small errors suggest that the method is generally robust. Based on this benchmark, r2tol is reccomended to be between 0.99 and 0.995.
