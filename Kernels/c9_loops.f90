@@ -36,8 +36,7 @@ do nl1 = -n, n
         do ml2 = -n, n
           do ml3 = -n, n
 
-            if (.not.(abs(nl1)==n .or. abs(nl2)==n .or. abs(nl3)==n .or. &
-                      abs(ml1)==n .or. abs(ml2)==n .or. abs(ml3)==n)) cycle
+            if (.not.(abs(nl1)==n .or. abs(nl2)==n .or. abs(nl3)==n)) cycle
 
             Tn = nl1*mtrx(:,1) + nl2*mtrx(:,2) + nl3*mtrx(:,3)
             Tm = ml1*mtrx(:,1) + ml2*mtrx(:,2) + ml3*mtrx(:,3)

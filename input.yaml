@@ -2,7 +2,7 @@ input_path:
   - ./examples/sr2n_bulk_b86bpbe-xdmbj.out
 file_type: aims
 
-functional: b86bpbe
+functional: b86bpbe_lightdenser
 damping: bj
 output_unit: Ha
 
