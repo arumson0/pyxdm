@@ -2,7 +2,7 @@ import numpy as np
 import time
 import sys
 import os
-os.environ["OMP_NUM_THREADS"] = "16"
+os.environ["OMP_NUM_THREADS"] = "32"
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../Kernels')))
 import c9_kernel
 
