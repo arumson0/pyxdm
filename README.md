@@ -36,6 +36,10 @@ Tags:
 
 `output_unit`: What unit you'd like the XDM energy to be expressed in. Options are Ha, Ry, eV, kcal/mol, kj/mol.
 
+`override_a1`, `override_a2`: Options to manually specify a1 and a2 for BJ damping.
+
+`override_zdamp`: Option to manually specify zdamp for Z-damping.
+
 `run_settings`:
 
 `verbose_conv`: prints the energy convergence over supercells if true.

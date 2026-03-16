@@ -35,12 +35,20 @@ def run_driver(yaml_path):
 
         a1_ov = config.override_a1
         a2_ov = config.override_a2
+
         if (a1_ov is None) != (a2_ov is None):
             raise ValueError("Both 'override_a1' and 'override_a2' must be provided together.")
+        if (a1_ov is not None) and config.damping=='z':
+            raise ValueError("Z-damping selected, but a1 and a2 override specified. Aborting.")
+
         if a1_ov is not None and a2_ov is not None:
             a1, a2 = a1_ov, a2_ov
+
         if config.override_zdamp is not None:
             zdamp = config.override_zdamp
+
+        if (zdamp is not None) and config.damping='bj'
+            raise ValueError("BJ-damping selected, but zdamp override specified. Aborting.")
 
         # Set the integer representation of the selected damping function.
         if config.damping=='bj':
