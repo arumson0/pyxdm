@@ -40,7 +40,7 @@ def qe_reader(inputFile):
                 break
             line = line.split()
             index = np.append(index, int(line[0]))
-            symbol.append(str(line[1]))
+            symbol.append(str(line[1]).title())
             positions = np.append(positions, np.array([float(line[6]),float(line[7]),float(line[8])]))
         tau = np.reshape(positions, (-1,3))
     # get the a-lattice parameter
