@@ -42,6 +42,9 @@ def etriple(tau, mtrx,c6,rc,c9,zinv,a1,a2,zdamp,damp_type_int,rmax2,l,E_CONVERT,
                     break
             else:
             # Extrapolate the convergence early
+                if abs(delta[-1]) < threshold:
+                    print("Actual convergence achieved before log-linearity. Using the actual value...")
+                    break
                 y = np.log(abs(delta))
                 if len(y) > 7:
                     yy = y[len(y)-7:]

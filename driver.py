@@ -29,8 +29,19 @@ def run_driver(yaml_path):
             print("Atom pairs requested.")
         else:
             print("No energy requested.")
+
         # Set the damping parameters:
         a1, a2, zdamp = set_params(config.functional.lower(), config.file_type.lower())
+
+        a1_ov = config.override_a1
+        a2_ov = config.override_a2
+        if (a1_ov is None) != (a2_ov is None):
+            raise ValueError("Both 'override_a1' and 'override_a2' must be provided together.")
+        if a1_ov is not None and a2_ov is not None:
+            a1, a2 = a1_ov, a2_ov
+        if config.override_zdamp is not None:
+            zdamp = config.override_zdamp
+
         # Set the integer representation of the selected damping function.
         if config.damping=='bj':
             damp_type_int = 0
