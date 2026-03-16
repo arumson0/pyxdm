@@ -47,7 +47,7 @@ def run_driver(yaml_path):
         if config.override_zdamp is not None:
             zdamp = config.override_zdamp
 
-        if (zdamp is not None) and config.damping='bj'
+        if (zdamp is not None) and config.damping=='bj'
             raise ValueError("BJ-damping selected, but zdamp override specified. Aborting.")
 
         # Set the integer representation of the selected damping function.
