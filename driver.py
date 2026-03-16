@@ -86,7 +86,6 @@ def run_driver(yaml_path):
 
         # Scale polarizabilities
         alpha = np.array([atom(s).pol for s in symbol])
-        print(volscl)
         alpha_scl = alpha * volscl
         # Make tau useful.
         tau = alat * tau

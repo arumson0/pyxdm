@@ -89,7 +89,6 @@ def aims_reader(inputFile):
                 break
             line = line.split()
             volscl = np.append(volscl, float(line[4])/float(line[2]))
-            print(volscl)
             m1 = np.append(m1, float(line[6]))
             m2 = np.append(m2, float(line[7]))
             m3 = np.append(m3, float(line[8]))
