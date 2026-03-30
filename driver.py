@@ -31,7 +31,7 @@ def run_driver(yaml_path):
             print("No energy requested.")
 
         # Set the damping parameters:
-        a1, a2, zdamp = set_params(config.functional.lower(), config.file_type.lower())
+        a1, a2, zdamp = set_params(config.functional.lower(), config.file_type.lower(),config.triples)
 
         a1_ov = config.override_a1
         a2_ov = config.override_a2
@@ -40,7 +40,7 @@ def run_driver(yaml_path):
             raise ValueError("Both 'override_a1' and 'override_a2' must be provided together.")
 
         if a1_ov is not None and a2_ov is not None:
-            a1, a2 = a1_ov, a2_ov
+            a1, a2 = a1_ov, a2_ov / 0.529177
 
         if config.override_zdamp is not None:
             zdamp = config.override_zdamp

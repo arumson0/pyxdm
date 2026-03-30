@@ -103,7 +103,7 @@ def aims_reader(inputFile):
             if "lattice_vector" in line_parts:
                 mtrx = np.append(mtrx, np.array([float(line_parts[1]), float(line_parts[2]), float(line_parts[3])]))
             elif "atom_frac" in line_parts:
-                positions = np.append(positions, np.array([float(line_parts[1]), float(line_parts[2]), float(line_parts[3])]))
+                positions_frac = np.append(positions_frac, np.array([float(line_parts[1]), float(line_parts[2]), float(line_parts[3])]))
                 symbol.append(str(line_parts[4]))
             elif "atom" in line_parts:
                 if line_parts[0] == "atom":
