@@ -10,6 +10,6 @@ cd ..
 dir=$(pwd)
 mkdir $dir/bin
 chmod +x $dir/driver.py
-ln -s $dir/driver.py $dir/bin/pyxdm
+ln -s $dir/driver.py $dir/bin/parrotxdm
 
-export PATH=$dir/pyxdm/bin/:$PATH
+export PATH=$dir/parrotxdm/bin/:$PATH
